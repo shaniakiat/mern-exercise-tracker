@@ -4,6 +4,12 @@ export default class CreateExercises extends Component {
   constructor(props) {
     super(props);
 
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeDuration = this.onChangeDuration.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
     //react use state as variables
     this.state = {
       username: "",
@@ -12,6 +18,13 @@ export default class CreateExercises extends Component {
       date: new Date(),
       users: []
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      users: ["test user"],
+      username: "test user"
+    });
   }
 
   onChangeUsername(e) {
@@ -38,8 +51,21 @@ export default class CreateExercises extends Component {
     });
   }
 
+  //submit exercise
   onSubmit(e) {
     e.preventDefault();
+
+    const exercise = {
+      username: this.state.username,
+      description: this.state.description,
+      duration: this.state.duration,
+      date: this.state.date
+    };
+
+    console.log(exercise);
+
+    //back to homepage
+    window.location = "/";
   }
 
   render() {
