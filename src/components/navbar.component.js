@@ -12,16 +12,16 @@ export default class Navbar extends Component {
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
               <Link to="/" className="nav-Link">
-                Exercise
+                Exercises
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/" className="nav-Link">
+              <Link to="/create" className="nav-Link">
                 Create Exercise Log
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/" className="nav-Link">
+              <Link to="/user" className="nav-Link">
                 Create User
               </Link>
             </li>
